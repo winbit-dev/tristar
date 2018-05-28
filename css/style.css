@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
 }
 
@@ -41,43 +41,73 @@ ul { list-style: none; }
 .next-page:active { background: rgba(155,155,155,.5); }
 
 .pagination {
-  width: 30px;
+  width: auto;
   height: auto;
   position: fixed;
   top: 50%;
-  right: 5px;
+  right: 28px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 40px 0;
-  margin-top: -150px;
+  padding: 0 0;
+  margin-top: -151px;
 }
 
 .pagination a {
-  width: 25px;
-  height: 25px;
-  display: block;
-  line-height: 28px;
-  text-align: center;
-  padding-left: 3px;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+	width: 150px;
 }
 
-.pagination a:after {
-  content: "";
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  background: rgba(0,0,0,.5);
-  -webkit-transition: background .3s ease;
-  -moz-transition: background .3s ease;
-  -ms-transition: background .3s ease;
-  -o-transition: background .3s ease;
-  transition: background .3s ease;
+.pagination a>.circle{
+	width: 26px;
+	height: 26px;
+	border: rgba(255,255,255,0) 1px solid;
+	display: block;
+	border-radius: 100%;	
+	float: right;
+	margin: 0 12px;
+	-webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;
+}
+.pagination a.active>.circle{
+	border: rgba(255,255,255,1) 1px solid;	
+}
+.pagination a>.circle>.dot{
+	width: 4px;
+	height: 4px;
+	margin: 10px;
+	display: block;
+	border: rgba(255,255,255,0.5) 1px solid;
+	border-radius: 100%;
+	-webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;
+}
+.pagination a.active>.circle>.dot{
+	border: rgba(255,255,255,1) 1px solid;
 }
 
-.pagination a.active:after { background: rgba(255,255,255,.5); }
-
+.pagination a>.menu{
+	font-size: 12px;
+	text-transform: uppercase;
+	display: block;
+	color: rgba(255,255,255,0.5);
+	text-align: right;
+	position: absolute;
+	top: 6px;
+	right: 60px;
+	-webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;
+}
+.pagination a.active>.menu{
+	color: rgba(255,255,255,1);
+}
+.pagination .dot-line{
+	background: url(../img/dot-line.gif) 123px 0 repeat-y;
+	width: 100%;
+	height: 27px;
+	display: block;
+	opacity: 0.5;
+}
 .play {
   display: block;
   position: absolute;
@@ -192,7 +222,7 @@ background: linear-gradient(45deg, rgba(92,135,38,1) 0%, rgba(164,113,65,1) 50%,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c8726', endColorstr='#762e5a', GradientType=1 );
 }
 */
-.body__inner {
+.body-inner {
   position: fixed;
   top: 0;
   left: 0;
@@ -203,7 +233,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c8726', end
           transform: translateZ(0);
 }
 
-.aaa {
+.body-inner .vignette {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -213,20 +243,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c8726', end
 	bottom: 0;
 	z-index: 1;
 }
-.aaa.gradient {
-	background: #fa49ff;
-	background: -moz-linear-gradient(45deg, #fa49ff 0, #6267fc 64%, #5bead5 100%);
-	background: -webkit-linear-gradient(45deg, #fa49ff 0, #6267fc 64%, #5bead5 100%);
-	background: linear-gradient(45deg, #fa49ff 0, #6267fc 64%, #5bead5 100%);
-filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa49ff', endColorstr='#5bead5', GradientType=1 )
-}
-.aaa.vignette {
+.body-inner .vignette {
 	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0, rgba(0,0,0,1) 100%);
 	background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0, rgba(0,0,0,1) 100%);
 	background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0, rgba(0,0,0,1) 100%);
-filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=1 );
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=1 );
 	opacity: .5;
 	transition: opacity 4s cubic-bezier(.19, 1, .22, 1) .5s;
 	-webkit-transition: opacity 4s cubic-bezier(.19, 1, .22, 1) .5s
 }
 
+.item1{display: table;}
+.main-text{display:table-cell; vertical-align: middle; width: 100%; height: 100%; padding:0 20%; text-align: left; color: #FFF;}
+.main-text h2.title{font-size: 60px; display: block; padding: 0; margin: 0; -webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;}
+.main-text p{font-size: 14px; display: block; -webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;}

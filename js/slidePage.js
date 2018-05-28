@@ -106,7 +106,7 @@
         },
         canNext:true,
         canPrev:true,
-        isScroll:false,//-- 移动端控制滚动或滑动
+        isScroll:false,
 
     };
     var obj = {
@@ -124,7 +124,7 @@
             item.next().css(translate('100%'))
         }
     }
-    //-- 判断pc端
+ 
     function IsPC() {
         var userAgentInfo = navigator.userAgent;
         var Agents = ["Android", "iPhone",
@@ -140,19 +140,19 @@
         return flag;
     }
 
-    //-- translate兼容性封装
+
     function translate(y){
         return {'-webkit-transform':'translate3d(0px, '+y+' 0px)','transform':'translate3d(0px, '+y+', 0px)'}
     }
 
-    //-- 滚动执行动画
+
     function pageActive(){
         if(opt.refresh&&delay&&opt.useAnimation){
             $(opt.pageContainer).eq(keyIndex).find('.step').addClass('hide')
             $(opt.pageContainer).eq(keyIndex).find('.lazy').addClass('hide')
         }
     }
-    //-- 拆分url的参数
+
     function urlToObject(url){
         var urlObject = {};
         if (/\?/.test(url)) {
@@ -166,7 +166,7 @@
             return urlObject;
         }
     }
-    //-- 滚动下一屏执行过程
+
     function nextPage(item) {
         direction = 'next'
         if (item.next().length) {
@@ -180,7 +180,7 @@
         opt.before(item.index()+1,direction,item.index()+2);
         pageActive()
     }
-    //-- 滚动上一屏执行过程
+
     function prevPage(item) {
         direction = 'prev'
         if (item.prev().length) {
@@ -195,12 +195,12 @@
         keyindex = $(opt.pageContainer).index(item)
         pageActive()
     }
-    //-- 初始化元素
+
     function initDom(opt) {
         if (!!opt.speed){
             $(opt.pageContainer).css({'transition-duration':opt.speed+'ms','-webkit-transition-duration':opt.speed+'ms'});
         }
-        slidePage.index(opt.index)// 初始化指定页码
+        slidePage.index(opt.index)
 
         if (!!opt.useAnimation) {
             var items = $(opt.pageContainer);
@@ -209,7 +209,7 @@
             orderStep(items.eq(opt.index - 1))
         }
     }
-    //-- 默认触发动画
+
     function orderStep(dom,delays) {
         after=true;
         setTimeout(function(){
@@ -223,7 +223,7 @@
             }, time)
         })
     }
-    //-- 手动触发动画
+
     function fireAnimate(index) {
         var item = $(opt.pageContainer).eq(index - 1);
         var lazy = item.find('.lazy')
@@ -235,17 +235,16 @@
         })
     }
 
-    //-- 判断滚动模式
+
     function isScroll(target,offset){
         var offset = offset===0?0:false||1
         var itemheight = $(".item").eq(target - 1).children().height();
         if((itemheight-windowH)>20){
-            var isNext = direction == 'next';   //-- 判断方向
-            !isNext?$(opt.pageContainer).eq(target-1).scrollTop(itemheight-windowH-offset):$(opt.pageContainer).eq(target-1).scrollTop(offset) //如果是往下滚来的就滚动条定位在顶部，往上滚来的就滚动条定位在底部
+            var isNext = direction == 'next'; 
+            !isNext?$(opt.pageContainer).eq(target-1).scrollTop(itemheight-windowH-offset):$(opt.pageContainer).eq(target-1).scrollTop(offset)
         }
     }
 
-    //-- 处理滚动条模式
     function slideScroll(target){
         var itemheight = $(".item").eq(target - 1).children().height();
         if((itemheight-windowH)>20){
@@ -266,9 +265,8 @@
 
     }
 
-    //-- 各种事件交互
+
     function initEvent(opt) {
-        //-- 滚轮事件触发
         function wheelFunc(e){
             var e = e|| window.event
             if(e.wheelDeltaY<0||e.wheelDelta<0||e.detail>0){
@@ -278,12 +276,12 @@
             }
 
         }
-        //-- 滚轮事件兼容处理
+
         if(!!opt.useWheel){
             document.onmousewheel = wheelFunc
             document.addEventListener&& document.addEventListener('DOMMouseScroll',wheelFunc,false);
         }
-        //-- 键盘事件
+
         if(!!opt.useKeyboard){
             document.onkeydown = function(e){
                 if(e.keyCode=='40'&&delay&&keyIndex<pageCount-1){
@@ -293,20 +291,20 @@
                 }
             }
         }
-        //-- 获取触控开始位置
+
         var touchY = 0
-        //由于zepto与jquery对象的事件返回不一致，所以这里用原生来统一
+
         document.getElementById('slidePage-container').addEventListener('touchstart',function(e){
             touchY = e.touches[0].clientY
         })
-        //-- 判断触控移动方向
+
         document.getElementById('slidePage-container').addEventListener('touchmove',function(e){
             var offsetY = e.touches[0].clientY-touchY
-            !slidePage.canPrev&&offsetY>5&&(slidePage.isScroll=true)    //-- 滚动到底部往上滑可继续滚动条滚动
-            !slidePage.canNext&&offsetY<-5&&(slidePage.isScroll=true)   //-- 滚动到顶部往下滑可继续滚动条滚动
+            !slidePage.canPrev&&offsetY>5&&(slidePage.isScroll=true)
+            !slidePage.canNext&&offsetY<-5&&(slidePage.isScroll=true)
             !slidePage.isScroll&&e.preventDefault()
         });
-        //-- 手势滑动
+
         $(opt.pageContainer).on({
             'swipeUp':  function () {
                 slidePage.canNext&&slidePage.next();
@@ -316,9 +314,9 @@
             }
         });
 
-        //-- 监听css过渡结束的事件
+
         $(opt.pageContainer).on('transitionend webkitTransitionEnd', function(event) {
-          // 判断是否有页面被remove
+
           var removedLength = removedIndex.split(',').length
             if(after){
               if (removedLength>1) {
