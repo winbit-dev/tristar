@@ -176,7 +176,7 @@ ul { list-style: none; }
 	transition: opacity 4s cubic-bezier(.19, 1, .22, 1) .5s;
 	-webkit-transition: opacity 4s cubic-bezier(.19, 1, .22, 1) .5s
 }
-#wave{z-index: 1000; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+#wave{z-index: 1; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .logo-box{width: 100px; height: 100px; top: 15px; left: 15px; background-color: #FFF; display: block; position:fixed; z-index: 10; cursor: pointer;}
 .logo-box>img{margin: 20px 0; width: 60px;}
 
