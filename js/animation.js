@@ -83,7 +83,7 @@ var f = 500;
 var rot = 0;
 var direction = -1;
 var distance;
-ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+ctx.fillStyle = 'rgba(255, 255, 255, 1)';
 
 requestAnimationFrame(function loop() {
   rot += .75;
@@ -94,7 +94,7 @@ requestAnimationFrame(function loop() {
   var cpm = [
     [f, 0, 0, 0],
     [0, f, 0, 0],
-    [0, 0, 8, distance]
+    [0, 0, 2, distance]
   ];
   
   var rotX = getRotateY(rot);
@@ -209,3 +209,76 @@ function matrixMultiply(m1, m2) {
     [m1_2_0 * m2_0_0 + m1_2_1 * m2_1_0 + m1_2_2 * m2_2_0, m1_2_0 * m2_0_1 + m1_2_1 * m2_1_1 + m1_2_2 * m2_2_1, m1_2_0 * m2_0_2 + m1_2_1 * m2_1_2 + m1_2_2 * m2_2_2]
   ];
 }
+
+$(function(){
+		var waves = new SineWaves({
+			el: document.getElementById('waves'),
+
+			speed: 8,
+
+			width: function() {
+				return $(window).width();
+			},
+
+			height: function() {
+				return $(window).height();
+			},
+
+			wavesWidth: '95%',
+
+			ease: 'SineInOut',
+
+			waves: [
+				{
+					timeModifier: 1,
+					lineWidth: 0.4,
+					amplitude: 150,
+					wavelength: 200,
+					segmentLength: 20,
+
+				},
+				{
+					timeModifier: 1,
+					lineWidth: 0.4,
+					amplitude: 150,
+					wavelength: 100,
+				},
+				{
+					timeModifier: 1,
+					lineWidth: 0.4,
+					amplitude: -150,
+					wavelength: 50,
+					segmentLength: 10,
+				},
+				{
+					timeModifier: 1,
+					lineWidth: 0.4,
+					amplitude: -100,
+					wavelength: 100,
+					segmentLength: 10,
+				}
+			],
+
+			initialize: function (){
+
+			},
+
+			resizeEvent: function() {
+				var gradient = this.ctx.createLinearGradient(0, 0, this.width, 0);
+				gradient.addColorStop(0,"rgba(0, 0, 0, 0)");
+				gradient.addColorStop(0.5,"rgba(255, 255, 255, 0.5)");
+				gradient.addColorStop(1,"rgba(0, 0, 0, 0)");
+
+				var index = -1;
+				var length = this.waves.length;
+					while(++index < length){
+					this.waves[index].strokeStyle = gradient;
+				}
+
+				// Clean Up
+				index = void 0;
+				length = void 0;
+				gradient = void 0;
+			}
+		});
+	});
