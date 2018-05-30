@@ -232,12 +232,12 @@ ul { list-style: none; }
 
 .slidePage-container p{margin: 0; padding: 0;}
 
-.item{}
-.main-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle;}
-.about-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
-.team-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
-.partner-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
-.contact-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
+.item{display: table;}
+.main-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle; display: table-cell;}
+.about-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle; display: table-cell;}
+.team-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle; display: table-cell;}
+.partner-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle; display: table-cell;}
+.contact-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle; display: table-cell;}
 
 @media (min-width:360px) {
 .main-text,.about-text,.team-text,.partner-text,.contact-text{padding: 0 50px 0 30px;}
