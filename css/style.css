@@ -198,13 +198,13 @@ ul { list-style: none; }
 
 .prev-page, .next-page {
   display: block;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   position:fixed;
   z-index: 9999;
 	background-color: rgba(255,255,255,1.00);
-  font-size: 18px;
+  font-size: 14px;
   color: rgba(0,0,0,0.8);
   text-align: center;
 	cursor: pointer;
@@ -215,15 +215,15 @@ ul { list-style: none; }
 	background-color: rgba(255,255,255,0.3);
 	color: rgba(0,0,0,0.3);
 }
-.prev-page{bottom:75px; left: 15px;} 
-.next-page{bottom:50px; left: 70px;}
+.prev-page{bottom:70px; left: 15px;} 
+.next-page{bottom:50px; left: 60px;}
 @media (min-width:360px) {
-.prev-page, .next-page{width: 55px;height: 55px;line-height: 55px;}	
-.prev-page{bottom:77px; left: 20px;} 
-.next-page{bottom:50px; left: 80px;}
+.prev-page, .next-page{width: 50px;height: 50px;line-height: 50px;}	
+.prev-page{bottom:75px; left: 20px;} 
+.next-page{bottom:50px; left: 75px;}
 }
 @media (min-width:480px) {
-.prev-page, .next-page{width: 60px;height: 60px;line-height: 60px;}	
+.prev-page, .next-page{width: 60px;height: 60px;line-height: 60px;font-size: 15px;}	
 .prev-page{bottom:80px; left: 20px;} 
 .next-page{bottom:50px; left: 90px;}
 }
@@ -232,12 +232,12 @@ ul { list-style: none; }
 .next-page{bottom:30px; left: 130px;}
 }
 @media (min-width:768px) {
-.prev-page, .next-page{width: 70px; height: 70px;line-height: 70px;}		
+.prev-page, .next-page{width: 70px; height: 70px;line-height: 70px; font-size: 16px;}		
 .prev-page{bottom:70px; left: 105px;} 
 .next-page{bottom:35px; left: 190px;}
 }
 @media (min-width:1024px) {
-.prev-page, .next-page{width: 80px; height: 80px;line-height: 80px;}		
+.prev-page, .next-page{width: 80px; height: 80px;line-height: 80px; font-size: 18px;}		
 .prev-page{bottom:80px; left: 120px;} 
 .next-page{bottom:40px; left: 220px;}
 }
@@ -270,23 +270,24 @@ ul { list-style: none; }
 .main-text,.about-text,.team-text,.partner-text,.contact-text{padding: 0 20%;}
 }
 h2.title{font-size: 26px; display: block; padding: 0; margin: 0;}
-.sub-txt{font-size: 14px; font-weight: 200; font-family: 'Muli', sans-serif; display: block; padding-top: 20px;}
+.sub-txt{font-size: 14px; font-weight: 200; font-family: 'Muli', sans-serif; display: block; padding-top: 5px;}
 .sub-txt br{display: none;}
 
 @media (min-width:360px) {
 h2.title{font-size: 30px;}
+.sub-txt{padding-top: 10px;}
 }
 
 @media (min-width:480px) {
 h2.title{font-size: 42px;}
-.sub-txt{font-size: 15px;}
+.sub-txt{font-size: 15px; padding-top: 15px;}
 }
 @media (min-width:640px) {
 h2.title{font-size: 50px;}
 }
 @media (min-width:768px) {
 h2.title{font-size: 52px;}
-.sub-txt{font-size: 15px;}
+.sub-txt{font-size: 15px; padding-top: 20px;}
 }
 @media (min-width:1024px) {
 h2.title{font-size: 56px;}
@@ -294,6 +295,29 @@ h2.title{font-size: 56px;}
 .sub-txt br{display: block;}
 }
 
+.email{font-family: 'Muli', sans-serif;  width: auto; display: block; padding: 10px 0;}
+.email a{font-size:20px; color: #FFF; text-decoration: none; font-weight: 200;}
+.address{font-size: 13px; font-weight: 200; font-family: 'Muli', sans-serif; display: block; padding: 5px 0;}
+.address strong{font-size: 16px; font-weight:normal; padding-bottom: 5px; display: block;}
+@media (min-width:480px) {
+.email{font-size:22px;}
+.address strong{font-size: 18px;}
+}
+@media (min-width:640px) {
+.email{padding: 20px 0;}
+.address{padding: 10px 0; font-size: 14px;}
+.address strong{padding-bottom: 10px;}
+}
+.item .btn{display: inline-block; font-size: 11px; font-weight:400; padding: 7px 15px; background-color: #FFF; color: #000; border: none; font-family: 'Muli', sans-serif; text-transform: uppercase; border-radius: 15px; margin-top: 10px; float: left; cursor: pointer; outline: 0;}
+@media (min-width:360px) {
+.item .btn{margin-top: 20px;}
+}
+@media (min-width:640px) {
+.item .btn{margin-top: 30px; font-size: 12px; padding: 10px 20px; border-radius: 17px;}
+}
+@media (min-width:768px) {
+.item .btn{margin-top: 40px; font-size: 13px; padding: 15px 25px; border-radius: 23px;}
+}
 .scroll-down {
   display: none;
   position: absolute;
