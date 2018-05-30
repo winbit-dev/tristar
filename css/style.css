@@ -208,12 +208,12 @@ ul { list-style: none; }
   color: #111;
   text-align: center;
 	cursor: pointer;
+	-webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;
 }
 
 .prev-page.disabled, .next-page.disabled {
 	cursor: none;
 	opacity: 0.5;
-	-webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;
 }
 
 .prev-page{bottom:80px; left: 80px; background: url(../img/up-btn.png) no-repeat;} 
@@ -232,12 +232,12 @@ ul { list-style: none; }
 
 .slidePage-container p{margin: 0; padding: 0;}
 
-.item{display: table;}
-.main-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; display: table-cell; vertical-align: middle;}
-.about-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; display: table-cell; vertical-align: middle}
-.team-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; display: table-cell; vertical-align: middle}
-.partner-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; display: table-cell; vertical-align: middle}
-.contact-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; display: table-cell; vertical-align: middle}
+.item{}
+.main-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle;}
+.about-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
+.team-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
+.partner-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
+.contact-text{padding: 0 50px 0 25px; text-align: left; color: #FFF; vertical-align: middle}
 
 @media (min-width:360px) {
 .main-text,.about-text,.team-text,.partner-text,.contact-text{padding: 0 50px 0 30px;}
