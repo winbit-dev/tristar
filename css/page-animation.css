@@ -46,8 +46,6 @@
         }
     }
 
-
-    /*透明度闪动*/
 .fadeFlash {
     animation-name: fadeFlash;
     -webkit-animation-name: fadeFlash;
@@ -80,8 +78,6 @@
     }
 }
 
-
-/*红线伸长动画*/
 .flaxLine{
     animation-name: flexline;
     -webkit-animation-name: flexline;
@@ -102,7 +98,6 @@
     from {width:0;}
     to {width:100%;}
 }
-    /*红色边框闪动*/
     .borderFlash{
         animation-name: borderFlash;
         -webkit-animation-name: borderFlash;
@@ -150,8 +145,6 @@
         }
     }
 
-
-/*重力砸下特效*/
 .forceDown{
     animation-name: forceDown;
     -webkit-animation-name: forceDown;
@@ -191,11 +184,6 @@
         transform: none;
     }
 }
-
-
-
-
-
 
     .slideLeft{
         animation-name: slideLeft;
