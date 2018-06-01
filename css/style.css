@@ -578,10 +578,10 @@ h2.title{font-size: 56px;}
 .copyright{padding:40px;}
 }
 
-.detail{width:100%; height: 100%; display: block; position: fixed; left: 0; bottom: -100%; background-color:#FFF; z-index:55; -webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;}
+.detail{width:100%; height: 100%; display: block; position: fixed; left: 0; bottom: -100%; background-color:#FFF; z-index:50; -webkit-transition: all .25s ease-in-out;-moz-transition: all .25s ease-in-out;transition: all .25s ease-in-out;}
 .detail.active{bottom: 0;}
 
-.btn-close{width: 40px; height: 40px; display: block; background: url(../img/close.png) no-repeat; border: none; position: absolute; top: 40px; right: 40px; cursor: pointer; outline:0;}
+.btn-close{width: 40px; height: 40px; display: block; background: url(../img/close.png) no-repeat; border: none; z-index:50; position: absolute; top: 40px; right: 40px; cursor: pointer; outline:0;}
 
 
 .loader-box{width: 100%; height: 100%; background-color: #FFF; position: absolute; top: 0; left: 0; z-index: 55;}
@@ -684,8 +684,38 @@ h2.title{font-size: 56px;}
   80%  { left: 80px; top: 0;  }
 	100% { left: 40px; top: 40px; }
 }
+.swiper-container {
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
 
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
 
+.swiper-slide.caver{background: #36ab4a;}
+.swiper-slide.gpu{background: #333;}
+.swiper-slide.fintech{background: #8c2232;}
+.swiper-slide.winbit{background: #34314c;}
 
-
-
+.swiper-pagination-bullet{background-color: rgba(255,255,255,0); width: 10px; height: 10px; border:#FFF 1px solid; opacity: 0.5;}
+.swiper-pagination-bullet-active{background-color: rgba(255,255,255,0); width: 10px; height: 10px; border:#FFF 1px solid; opacity: 1;}
+.swiper-container-horizontal>.swiper-pagination-bullets{bottom: 40px;}
+.swiper-button-prev{left: 40px; width: 20px; height: 40px; margin-top: -20px; background: url(../img/btn-prev.png) no-repeat;}
+.swiper-button-next{right: 40px; width: 20px; height: 40px; margin-top: -20px; background: url(../img/btn-next.png) no-repeat;}

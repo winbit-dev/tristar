@@ -7,12 +7,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/slidePage.css">
 	<link rel="stylesheet" type="text/css" href="css/page-animation.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ontouchstart="">
-	<div class="loader-box">
+	<div class="loader-box" style="display: none;">
 		<div class="loading">
 			<div class="block"></div>
 			<div class="block"></div>
@@ -24,8 +25,22 @@
 	</div>
 	
 	<div class="detail detail-about">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide caver"></div>
+				<div class="swiper-slide gpu"></div>
+				<div class="swiper-slide fintech"></div>
+				<div class="swiper-slide winbit"></div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
 		<button type="button" class="btn-close"></button>
 	</div>
+	
 	<div class="detail detail-team">
 		<button type="button" class="btn-close"></button>
 	</div>
@@ -136,7 +151,23 @@
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
 <script type="text/javascript" src="js/slidePage.js"></script> 
 <script src="js/jquery.noisy.min.js"></script>
+<script src="js/swiper.min.js"></script>
 <script src="js/animation.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>	
 
 </body>
 </html>
