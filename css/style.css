@@ -584,6 +584,108 @@ h2.title{font-size: 56px;}
 .btn-close{width: 40px; height: 40px; display: block; background: url(../img/close.png) no-repeat; border: none; position: absolute; top: 40px; right: 40px; cursor: pointer; outline:0;}
 
 
+.loader-box{width: 100%; height: 100%; background-color: #FFF; position: absolute; top: 0; left: 0; z-index: 55;}
+
+.loading {
+  width:110px;
+  height:110px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-55px;
+  margin-left:-55px;
+}
+
+.loading .block {
+  width:30px;
+  height:30px;
+  position:absolute;
+}
+
+.loading .block:nth-child(1) {
+  top:0;
+  left:0;
+  right:auto;
+  bottom:auto;
+	-webkit-animation: square1 3s infinite;
+  background-color:#2c3280 ;
+	z-index: 2;
+}
+
+.loading .block:nth-child(2) {
+  top:0;
+  left:40px;
+  right:auto;
+  bottom:auto;
+	-webkit-animation: square2 3s infinite;
+  background-color:#2c3280 ;
+	z-index: 2;
+}
+
+.loading .block:nth-child(3) {
+  top:0;
+  left:80px;
+  right:auto;
+  bottom:auto;
+  -webkit-animation: square3 3s infinite;
+  background-color:#67a547 ;
+	z-index: 1;
+}
+
+.loading .block:nth-child(4) {
+  top:40px;
+  left:40px;
+  right:auto;
+  bottom:auto;
+  -webkit-animation: square4 3s infinite;
+  background-color:#67a547 ;
+	z-index: 1;
+}
+.loading .block:nth-child(5) {
+  top:40px;
+  left:80px;
+  right:auto;
+  bottom:auto;
+	-webkit-animation: square5 3s infinite;
+  background-color:#2c3280 ;
+	z-index: 2;
+}
+.loading .block:nth-child(6) {
+  top:80px;
+  left:80px;
+  right:auto;
+  bottom:auto;
+  -webkit-animation: square6 3s infinite;
+  background-color:#67a547 ;
+	z-index: 1;
+}
+@-webkit-keyframes square3 {
+  0%  { left: 80px; top: 0; }
+  20% { left: 40px; top: 40px; }
+  40% { left: 80px; top: 80px;}
+  60% { left: 80px; top: 0;}
+  80%  { left: 40px; top: 40px;  }
+	100% { left: 80px; top: 80px; }
+}
+
+@-webkit-keyframes square4 {
+  0%  { left: 40px; top: 40px; }
+  20% { left: 80px; top: 80px; }
+  40% { left: 80px; top: 0;}
+  60% { left: 40px; top: 40px;}
+  80%  { left: 80px; top: 80px;  }
+	100% { left: 80px; top: 0; }
+}
+@-webkit-keyframes square6 {
+  0%  { left: 80px; top: 80px; }
+  20% { left: 80px; top: 0; }
+  40% { left: 40px; top: 40px;}
+  60% { left: 80px; top: 80px;}
+  80%  { left: 80px; top: 0;  }
+	100% { left: 40px; top: 40px; }
+}
+
+
 
 
 
