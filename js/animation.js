@@ -263,7 +263,9 @@ $( document ).ready(function() {
 });
 
 
-
+   setTimeout(function () { 
+      $('.loader-box').fadeOut(700);
+   }, 3000);
 
 
 
