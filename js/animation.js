@@ -246,26 +246,27 @@ $(".detail").bind("mousewheel", function() {
 
 $( document ).ready(function() {
 	$(".btn-about").click(function () {
-        $(".detail-about").addClass("active");
+		$(".detail-about").addClass("active");
 	});
 	$(".btn-team").click(function () {
-        $(".detail-team").addClass("active");
+		$(".detail-team").addClass("active");
 	});
 	$(".btn-partners").click(function () {
-        $(".detail-partners").addClass("active");
+		$(".detail-partners").addClass("active");
 	});
 });
 
 $( document ).ready(function() {
 	$(".btn-close").click(function () {
-        $(".detail").removeClass("active");
+		$(".detail").removeClass("active");
+		$(".logo-box").removeClass("active");
 	});
 });
 
 
-   setTimeout(function () { 
-      $('.loader-box').fadeOut(700);
-   }, 3000);
+ setTimeout(function () { 
+		$('.loader-box').fadeOut(700);
+ }, 2000);
 
 
 
