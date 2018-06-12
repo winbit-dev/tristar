@@ -239,11 +239,11 @@ $('.slidePage-container').noisy({
 	monochrome: false
 });
 
-/*
+
 $(".detail").bind("mousewheel", function() {
   return false;
 });
-*/
+
 $( document ).ready(function() {
 	$(".btn-about").click(function () {
 		$(".detail-about").addClass("active");
